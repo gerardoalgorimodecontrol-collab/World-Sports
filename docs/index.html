@@ -10,7 +10,7 @@
             --text-main: #ffffff;
             --text-muted: #8d8d8d;
             --accent-color: #ffb703;
-            --card-bg: rgba(16, 22, 34, 0.85);
+            --card-bg: rgba(16, 22, 34, 0.9);
             --border-color: #30363d;
             --golden-ratio: 1.618;
         }
@@ -48,7 +48,7 @@
             text-align: center;
             padding: 30px;
             border: 1px solid var(--accent-color);
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             box-shadow: 0 0 30px rgba(255, 183, 3, 0.2);
         }
         h1 {
@@ -86,10 +86,6 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            transition: transform 0.2s ease;
-        }
-        .product-card:hover {
-            border-color: var(--accent-color);
         }
         .product-title {
             font-size: 1.1rem;
@@ -105,7 +101,7 @@
         }
         .btn-buy {
             background-color: var(--accent-color);
-            color: #000000;
+            color: #000000 !important;
             text-align: center;
             padding: 12px;
             text-decoration: none;
@@ -114,7 +110,6 @@
             letter-spacing: 1px;
             border: none;
             cursor: pointer;
-            transition: background 0.2s;
         }
         .btn-buy:hover {
             background-color: #ffca2c;
@@ -135,14 +130,12 @@
     <canvas id="spiralCanvas"></canvas>
 
     <div class="container">
-        <!-- Manifiesto Principal -->
         <div class="overlay">
             <h1>La Chispa y El Silicio</h1>
             <span class="status-badge">[ ESTADO: ACTIVO Y SOBERANO ]</span>
             <p>Aquí termina el ruido. Geometría, código y precisión absoluta orientados a la infraestructura digital independiente.</p>
         </div>
 
-        <!-- Sección Comercial / Productos en Doble Divisa -->
         <div class="store-section">
             <div class="product-card">
                 <div class="product-title">Manual de Arquitectura y Control</div>
