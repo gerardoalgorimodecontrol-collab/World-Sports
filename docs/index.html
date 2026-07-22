@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Chispa y El Silicio | Ecosistema Blindado</title>
+    <title>La Chispa y El Silicio | Ecosistema Soberano</title>
     <style>
         :root {
             --bg-color: #0a0a0a;
             --text-main: #ffffff;
             --text-muted: #8d8d8d;
             --accent-color: #ffb703;
+            --card-bg: rgba(16, 22, 34, 0.85);
+            --border-color: #30363d;
             --golden-ratio: 1.618;
         }
         body {
@@ -17,52 +19,150 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
+            overflow-x: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
         }
         canvas {
             display: block;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 1;
+            pointer-events: none;
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
         .overlay {
-            position: relative;
             text-align: center;
-            z-index: 10;
-            pointer-events: none;
-            padding: calc(20px * var(--golden-ratio));
-            border: 1px solid #333;
-            background: rgba(10, 10, 10, 0.85);
-            box-shadow: 0 0 25px rgba(255, 183, 3, 0.15);
+            padding: 30px;
+            border: 1px solid var(--accent-color);
+            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 30px rgba(255, 183, 3, 0.2);
         }
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 4px;
             color: var(--accent-color);
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             margin-top: 0;
         }
         p {
             color: var(--text-muted);
             line-height: var(--golden-ratio);
-            font-size: 1.1em;
+            font-size: 1rem;
             margin-bottom: 0;
+        }
+        .status-badge {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 2px;
+        }
+        .store-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.2s ease;
+        }
+        .product-card:hover {
+            border-color: var(--accent-color);
+        }
+        .product-title {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .product-price {
+            color: var(--accent-color);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .btn-buy {
+            background-color: var(--accent-color);
+            color: #000000;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-buy:hover {
+            background-color: #ffca2c;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <h1>La Chispa y El Silicio</h1>
-        <p>[ ESTADO: ACTIVO Y SOBERANO ]<br>Aquí termina el ruido. Geometría, código y precisión.</p>
-    </div>
+
     <canvas id="spiralCanvas"></canvas>
+
+    <div class="container">
+        <!-- Manifiesto Principal -->
+        <div class="overlay">
+            <h1>La Chispa y El Silicio</h1>
+            <span class="status-badge">[ ESTADO: ACTIVO Y SOBERANO ]</span>
+            <p>Aquí termina el ruido. Geometría, código y precisión absoluta orientados a la infraestructura digital independiente.</p>
+        </div>
+
+        <!-- Sección Comercial / Productos en Doble Divisa -->
+        <div class="store-section">
+            <div class="product-card">
+                <div class="product-title">Manual de Arquitectura y Control</div>
+                <p>Fundamentos teóricos y metodológicos para el diseño de sistemas autónomos y soberanía digital.</p>
+                <div class="product-price">$9.99 USD / $175 MXN</div>
+                <a href="https://hotmart.com" target="_blank" class="btn-buy">Adquirir Sistema (Hotmart)</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-title">Licencia Semestral del Ecosistema</div>
+                <p>Acceso completo a herramientas avanzadas, flujos automatizados y reportes de alta precisión.</p>
+                <div class="product-price">$147.00 USD / $2,572 MXN</div>
+                <a href="https://hotmart.com" target="_blank" class="btn-buy">Adquirir Licencia (Hotmart)</a>
+            </div>
+        </div>
+
+        <footer>
+            La Verdad y El Silicio &bull; Todos los derechos reservados bajo soberanía propia.
+        </footer>
+    </div>
 
     <script>
         const canvas = document.getElementById('spiralCanvas');
@@ -77,14 +177,14 @@
 
         function drawSpiral() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = '#ffb703';
+            ctx.strokeStyle = 'rgba(255, 183, 3, 0.25)';
             ctx.lineWidth = 1.5;
             ctx.beginPath();
             
             let angle = 0;
             let radius = 0;
 
-            for (let i = 0; i < 600; i++) {
+            for (let i = 0; i < 700; i++) {
                 angle += 0.1;
                 radius += 0.45;
                 const x = canvas.width / 2 + Math.cos(angle) * radius;
